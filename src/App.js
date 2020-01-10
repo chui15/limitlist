@@ -8,7 +8,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 const App = () => {
 
-  const [switchState, setSwitch] = useState(true);
+  const [switchState, setSwitch] = useState(false);
 
   const switchChange = name => event => {
     setSwitch({...switchState, [name]: event.target.checked});
@@ -101,10 +101,14 @@ const App = () => {
     setStudents(students.map(student => (student.id === studentID ? updatedStudent : student)));
   }
 
+  let switchMessage = !switchState ? 'Venture to the dark side?' : 'Venture back to the light side?';
+  let wrapperTheme = !switchState ? 'light' : 'dark';
+
   return (
+    <div className={wrapperTheme}>
     <div className="container">
       <div className="flex-row">
-        <h1 className="flex-small">Student Grade Table</h1>
+        <h1 className={"flex-small"}>Student Grade Table</h1>
         <div className="flex-large">
           <FormControlLabel
           control={
@@ -114,14 +118,14 @@ const App = () => {
               value="checkedB"
             />
           }
-          label="Venture to the dark side?"
+          label={switchMessage}
         /></div>
       </div>
       <div className="flex-row">
         <div className="flex-large">
           { editing ? (
             <div>
-              <h2>Edit Student</h2>
+              <h2 className={wrapperTheme}>Edit Student</h2>
               <EditStudentForm
               editing={editing}
               setEditing={setEditing}
@@ -130,16 +134,17 @@ const App = () => {
             </div>
           ) : (
             <div>
-              <h2>Add New Student</h2>
-              <AddStudentForm addStudent={addStudent} />
+              <h2 className={wrapperTheme}>Add New Student</h2>
+              <AddStudentForm addStudent={addStudent} theme={wrapperTheme}/>
             </div>
           )}
         </div>
         <div className="flex-large">
-          <h2>View Students</h2>
+          <h2 className={wrapperTheme}>View Students</h2>
           <StudentTable students={students} deleteStudent={deleteStudent} editStudent={editStudent}/>
         </div>
       </div>
+    </div>
     </div>
   );
 }

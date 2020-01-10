@@ -483,7 +483,7 @@ dd {
   max-width: 100%;
   padding: 0 1rem; }
 
-.container, .small-container, .medium-container {
+.container, .small-container, .medium-container, .container-dark {
   max-width: 1200px;
   padding: 0 1rem;
   margin-left: auto;
@@ -501,6 +501,14 @@ dd {
 @media (min-width: 600px) {
   .content-section {
     padding: 60px 0; } }
+
+
+.dark {
+  background: black;
+  color: white; }
+
+.light {
+  background: white; }
 
 /**
  * Grid

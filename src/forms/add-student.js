@@ -10,13 +10,15 @@ const AddStudentForm = props => {
     setStudent({ ...student, [name]: value });
   };
 
+  let formTheme = props.wrapperTheme ? 'dark' : 'light';
+
   return (
     <form onSubmit={event => {
       event.preventDefault();
       if (!student.name || !student.course || !student.grade) return;
       props.addStudent(student);
       setStudent(studentFormInitial);
-    }}>
+    }} className={formTheme}>
       <label>Name</label>
       <input type="text" name="name" value={student.name} onChange={handleInputChange}/>
       <label>Course</label>
