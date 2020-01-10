@@ -2,8 +2,70 @@ import React, { useState } from 'react';
 import StudentTable from './tables/student-table';
 import AddStudentForm from './forms/add-student';
 import EditStudentForm from './forms/edit-student';
+import { withStyles } from '@material-ui/core/styles';
+import Switch from '@material-ui/core/Switch';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 const App = () => {
+
+  const [switchState, setSwitch] = useState(true);
+
+  const switchChange = name => event => {
+    setSwitch({...switchState, [name]: event.target.checked});
+  }
+
+  const IOSSwitch = withStyles(theme => ({
+    root: {
+      width: 42,
+      height: 26,
+      padding: 0,
+      margin: theme.spacing(1),
+    },
+    switchBase: {
+      padding: 1,
+      '&$checked': {
+        transform: 'translateX(16px)',
+        color: theme.palette.common.white,
+        '& + $track': {
+          backgroundColor: '#52d869',
+          opacity: 1,
+          border: 'none',
+        },
+      },
+      '&$focusVisible $thumb': {
+        color: '#52d869',
+        border: '6px solid #fff',
+      },
+    },
+    thumb: {
+      width: 24,
+      height: 24,
+    },
+    track: {
+      borderRadius: 26 / 2,
+      border: `1px solid ${theme.palette.grey[400]}`,
+      backgroundColor: theme.palette.grey[50],
+      opacity: 1,
+      transition: theme.transitions.create(['background-color', 'border']),
+    },
+    checked: {},
+    focusVisible: {},
+  }))(({ classes, ...props }) => {
+    return (
+      <Switch
+        focusVisibleClassName={classes.focusVisible}
+        disableRipple
+        classes={{
+          root: classes.root,
+          switchBase: classes.switchBase,
+          thumb: classes.thumb,
+          track: classes.track,
+          checked: classes.checked,
+        }}
+        {...props}
+      />
+    );
+  });
 
   const studentData = [
     { id: 1, name: 'Christie', course: 'Genomics', grade: 100 },
@@ -41,7 +103,20 @@ const App = () => {
 
   return (
     <div className="container">
-      <h1>Student Grade Table</h1>
+      <div className="flex-row">
+        <h1 className="flex-small">Student Grade Table</h1>
+        <div className="flex-large">
+          <FormControlLabel
+          control={
+            <IOSSwitch
+              checked={switchState.checkedB}
+              onChange={switchChange('checkedB')}
+              value="checkedB"
+            />
+          }
+          label="Venture to the dark side?"
+        /></div>
+      </div>
       <div className="flex-row">
         <div className="flex-large">
           { editing ? (
