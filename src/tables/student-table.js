@@ -18,7 +18,7 @@ const StudentTable = props => (
             <td>{student.course}</td>
             <td>{student.grade}</td>
             <td>
-              <button className="button muted-button" onClick={() => props.editStudent(student)}>Edit</button>
+              <button className="button accent-button" onClick={() => props.editStudent(student)}>Edit</button>
               <button className="button muted-button" onClick={() => props.deleteStudent(student.id)}>Delete</button>
             </td>
           </tr>
