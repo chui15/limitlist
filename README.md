@@ -1,2 +1,3 @@
-# Student Grade Table (CRUD App) With Hooks
-Student Grade Table written using React.js functional components and hooks.
+# LimitList
+
+A personal bucket list CMS (Content Management System) application written using React.js functional components and hooks.  With LimitList, the possibilities are limitless.
