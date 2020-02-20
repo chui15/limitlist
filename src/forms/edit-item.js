@@ -20,11 +20,11 @@ const EditItemForm = props => {
       <label>Name</label>
       <input type="text" name="name" value={item.name} onChange={handleInputChange} />
       <label>Category</label>
-      <input type="text" name="course" value={item.category} onChange={handleInputChange} />
+      <input type="text" name="category" value={item.category} onChange={handleInputChange} />
       <label>Completed</label>
-      <input type="text" name="grade" value={item.completed} onChange={handleInputChange} />
-      <button>Update List Item</button>
-      <button onClick={() => props.setEditing(false)} className="button muted-button">
+      <input type="text" name="completed" value={item.completed} onChange={handleInputChange} />
+      <button type="button" className="btn btn-primary edit-button">Update List Item</button>
+      <button type="button" className="btn btn-secondary edit-button" onClick={() => props.setEditing(false)}>
         Cancel
       </button>
     </form>
