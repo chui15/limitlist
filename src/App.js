@@ -64,10 +64,10 @@ const App = () => {
         </p>
       </div>
       <div className="row list-row">
-        <div className="col-4">
+        <div className="col-4 add-edit">
           {editing ? (
             <div>
-              <h3>Edit Student</h3>
+              <h3>Edit Item</h3>
               <EditItemForm
                 editing={editing}
                 setEditing={setEditing}
@@ -82,7 +82,7 @@ const App = () => {
             </div>
           )}
         </div>
-        <div className="col-8">
+        <div className="col-8 list-items">
           <h3>My Personal Bucket List</h3>
           <ItemTable
             items={items}

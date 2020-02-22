@@ -13,7 +13,7 @@ const AddItemForm = props => {
   return (
     <form onSubmit={event => {
       event.preventDefault();
-      if (!item.name || !item.course || !item.grade) return;
+      if (!item.name || !item.category || !item.completed) return;
       props.addItem(item);
       setItem(itemFormInitial);
     }}>
