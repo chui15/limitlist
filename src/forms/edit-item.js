@@ -13,22 +13,44 @@ const EditItemForm = props => {
   }, [props]);
 
   return (
-    <form onSubmit={event => {
-      event.preventDefault();
-      props.updateItem(item.id, item);
-    }}>
+    <form>
       <label>Name</label>
-      <input type="text" name="name" value={item.name} onChange={handleInputChange} />
+      <input
+        type="text"
+        name="name"
+        value={item.name}
+        onChange={handleInputChange}
+      />
       <label>Category</label>
-      <input type="text" name="category" value={item.category} onChange={handleInputChange} />
+      <input
+        type="text"
+        name="category"
+        value={item.category}
+        onChange={handleInputChange}
+      />
       <label>Completed</label>
-      <input type="text" name="completed" value={item.completed} onChange={handleInputChange} />
-      <button type="button" className="btn btn-primary edit-button">Update List Item</button>
-      <button type="button" className="btn btn-secondary edit-button" onClick={() => props.setEditing(false)}>
+      <input
+        type="text"
+        name="completed"
+        value={item.completed}
+        onChange={handleInputChange}
+      />
+      <button
+        type="button"
+        className="btn btn-primary edit-button"
+        onClick={event => {
+          event.preventDefault();
+          props.setEditing(false);
+          props.updateItem(item.id, item);
+        }}
+      >
+        Update List Item
+      </button>
+      <button type="button" className="btn btn-secondary edit-button">
         Cancel
       </button>
     </form>
-  )
+  );
 }
 
 export default EditItemForm;
