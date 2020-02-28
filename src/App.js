@@ -59,12 +59,12 @@ const App = () => {
       </div>
       <div className="row justify-content-center">
         <p>
-          Limit List helps you manage your personal bucket list. With Limit List, the
-          possibilities are limitless.
+          Limit List helps you manage your personal bucket list. With Limit
+          List, the possibilities are limitless.
         </p>
       </div>
-      <div className="row list-row">
-        <div className="col-4 add-edit">
+      <div className="row list-row justify-content-center">
+        <div className="col-3 mr-3 add-edit">
           {editing ? (
             <div>
               <h3>Edit Item</h3>
