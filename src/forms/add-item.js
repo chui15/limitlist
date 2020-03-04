@@ -5,6 +5,9 @@ const AddItemForm = props => {
   const itemFormInitial = { id: null, name: '', category: '', completed: '' };
   const [item, setItem] = useState(itemFormInitial);
 
+  const errorMessage = '';
+  const [error, setMessage] = useState(errorMessage);
+
   const handleInputChange = event => {
     const { name, value } = event.target;
     setItem({ ...item, [name]: value });
@@ -38,12 +41,19 @@ const AddItemForm = props => {
         className="btn btn-success add-button"
         onClick={event => {
           event.preventDefault();
-          if (!item.name || !item.category || !item.completed) return;
+          if (!item.name || !item.category || !item.completed) {
+            setMessage('All input fields must contain a value.');
+            setTimeout(() => {
+              setMessage('');
+            }, 4000);
+            return null;
+          }
           props.addItem(item);
           setItem(itemFormInitial);
         }}>
         Add New Item
       </button>
+      <p className="error-message">{error}</p>
     </form>
   );
 }

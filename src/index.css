@@ -29,6 +29,10 @@ h3 {
   padding: 20px;
 }
 
+.add-edit {
+  height: 480px;
+}
+
 .action-button {
   font-size: 20px;
   padding: 10px;
@@ -47,10 +51,21 @@ label {
   margin-top: 10px;
 }
 
+input {
+  width: 150px;
+}
+
 .edit-button {
   font-size: 20px;
   margin-top: 10px;
   display: block;
+}
+
+.error-message {
+  color: red;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 22px;
 }
 
 .toggle {

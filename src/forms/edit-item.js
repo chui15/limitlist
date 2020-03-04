@@ -46,7 +46,7 @@ const EditItemForm = props => {
       >
         Update List Item
       </button>
-      <button type="button" className="btn btn-secondary edit-button">
+      <button type="button" className="btn btn-secondary edit-button" onClick={() => props.setEditing(false)}>
         Cancel
       </button>
     </form>
