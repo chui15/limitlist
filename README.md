@@ -1,6 +1,6 @@
 # 📌 LimitList
 
-A personal bucket list CMS (Content Management System) application written using React.js functional components and hooks.  With LimitList, the possibilities are limitless.
+A personal bucket list front-end CMS (Content Management System) application written using React.js functional components and hooks. With LimitList, the possibilities are limitless.
 
 ## ✨ Technologies Used
 
@@ -8,6 +8,6 @@ A personal bucket list CMS (Content Management System) application written using
 - Bootstrap4
 - HTML5
 - CSS3
-- AWS EC2
+- Firebase
 - [use-dark-mode](https://github.com/donavon/use-dark-mode)
 - [react-dark-mode-toggle](https://github.com/cawfree/react-dark-mode-toggle)
