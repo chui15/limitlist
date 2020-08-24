@@ -8,7 +8,7 @@ A personal bucket list front-end CMS (Content Management System) application wri
 - Bootstrap4
 - HTML5
 - CSS3
-- Firebase
+- Netlify
 - [use-dark-mode](https://github.com/donavon/use-dark-mode)
 - [react-dark-mode-toggle](https://github.com/cawfree/react-dark-mode-toggle)
 
